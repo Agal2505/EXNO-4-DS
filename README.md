@@ -24,6 +24,55 @@ The feature selection techniques used are:
 3.Embedded Method
 
 # CODING AND OUTPUT:
-       # INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
+```
+import pandas as pd
+from scipy import stats
+import numpy as np
+```
+```
+df=pd.read_csv("/content/bmi.csv")
+df.head()
+```
+![{D5C0709E-E892-4794-98A9-2599EF784D1F}](https://github.com/user-attachments/assets/2fc6df00-3ef7-4c06-8c91-d062299e5392)
+```
+from sklearn.preprocessing import StandardScaler
+sc=StandardScaler()
+df[['Height','Weight']]=sc.fit_transform(df[['Height','Weight']])
+df.head(10)
+```
+![{A09BF65E-288A-485D-9006-F1F883611F9A}](https://github.com/user-attachments/assets/fb9dc29e-98b4-4a56-9581-bc559f24c53f)
+
+```
+max_vals=np.max(np.abs(df[['Height','Weight']]))
+max_vals
+
+```
+![{93A2F1F3-6A54-4AFC-B320-8212A8D18391}](https://github.com/user-attachments/assets/ca51ac83-c399-46cd-83b0-952f89912242)
+```
+from sklearn.preprocessing import MinMaxScaler
+scaler=MinMaxScaler()
+df[['Height','Weight']]=scaler.fit_transform(df[['Height','Weight']])
+df.head(10)
+```
+![{B8A7767B-A311-4D65-BC61-F4ACD5B23F83}](https://github.com/user-attachments/assets/177ff9fb-5371-4e76-8086-408c9fcc779d)
+
+```
+from sklearn.preprocessing import Normalizer
+scaler=Normalizer()
+df[['Height','Weight']]=scaler.fit_transform(df[['Height','Weight']])
+df
+```
+![{BD89CA17-6CC3-4775-9A6B-BB48180DEAFB}](https://github.com/user-attachments/assets/ebb4ec4d-1cc7-4a95-b6d4-d7e820953bce)
+```
+from sklearn.preprocessing import MaxAbsScaler
+sc=MaxAbsScaler()
+df[['Height','Weight']]=sc.fit_transform(df[['Height','Weight']])
+df
+```
+![{90018A8F-E916-402E-9B8A-BEE0831D8424}](https://github.com/user-attachments/assets/5a12ff4a-5868-490e-a8a2-0748012b18df)
+
+
+
+
 # RESULT:
        # INCLUDE YOUR RESULT HERE
