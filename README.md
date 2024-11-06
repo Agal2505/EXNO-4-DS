@@ -75,4 +75,6 @@ df
 
 
 # RESULT:
-       # INCLUDE YOUR RESULT HERE
+    we have performed Feature Scaling and Feature Selection process and save the
+data to a file.
+  
